@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Encontre no Google</h1>
+
+    <!-- Exemplo de uso de validação REQUIRED -->
+    <form action="https://www.google.com/search" method="get">
+      <label for="q">O que deseja pesquisar?</label>
+      <input
+        type="text"
+        id="q"
+        name="q"
+        placeholder="Nasa, SpaceX..."
+        required
+      />
+      <input type="submit" value="Pesquisar" />
+    </form>
+    <br />
+
+    <!-- Exemplo de uso de validação EMAIL -->
+    <form action="https://www.google.com/search" method="get">
+      <label for="q">O que deseja pesquisar?</label>
+      <input
+        type="email"
+        id="q"
+        name="q"
+        placeholder="Validação de email"
+        required
+      />
+      <input type="submit" value="Pesquisar" />
+    </form>
+    <br />
+
+    <!-- Exemplo de uso de validação NUMBER, MIN e MAX -->
+    <form action="https://www.google.com/search" method="get">
+      <label for="q">O que deseja pesquisar?</label>
+      <input
+        type="number"
+        id="q"
+        name="q"
+        placeholder="Na sa, SpaceX..."
+        min="10"
+        max="12"
+      />
+      <input type="submit" value="Pesquisar" />
+    </form>
+    <br />
+
+    <!-- Exemplo de uso de Autocomplete -->
+    <form action="/action_page.php" autocomplete="on">
+      First name: <input type="text" name="fname" /><br />
+      Last name: <input type="text" name="lname" /><br />
+      E-mail: <input type="email" name="email" autocomplete="off" /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+    <br />
+
+    <input list="browsers" />
+    <datalist id="browsers">
+      <option value="Internet Explorer"></option>
+      <option value="Firefox"></option>
+      <option value="Chrome"></option>
+      <option value="Opera"></option>
+      <option value="Safari"></option>
+    </datalist>
+  </body>
+</html>
