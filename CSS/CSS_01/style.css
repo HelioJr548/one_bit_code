@@ -1,0 +1,47 @@
+*{  /* Seletores universais, irá corresponder a todos os elementos do documento.  */
+    
+}
+
+body{   /* Seletor por tag */
+    background-image: url('https://i.pinimg.com/originals/7d/98/84/7d98840fdff1b2e7cd508cc7f3a17403.jpg');
+    background-repeat:  no-repeat;
+    background-size:    cover;
+}
+
+h1{ /* Seletor por tag */
+    color: #0000ff;
+    border: 2px dashed #9995ff
+}
+
+.ajuste{   /* Seletor por classe */
+    font-size: 20px;
+    color: bisque;
+}
+
+#moon{  /* Seletor por ID */
+    color: #ff55f8;
+    font-size: 45px;
+}
+
+/* Seletores Avançados */
+
+li a{   /* Seletor por descendencia */
+    color: rgb(41, 192, 94);
+}
+
+li > a{   /* Seletor filho */
+    color: rgb(226, 28, 180);
+}
+
+h1 + h4{ /* Seletor adjacente: Estiliza todo h4 que vier imediatamente depois de h1 */
+    border: 4px dashed;
+    
+}
+
+a[href='/recibo']{ /* Seletor de Atributo */
+    color: orange;
+}
+
+li:nth-of-type(odd){
+    color: #ff5972;
+}
