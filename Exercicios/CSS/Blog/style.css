@@ -1,4 +1,16 @@
+nav {
+  background-color: #fffafa;
+  width: 70%;
+  margin: 0px auto 10px auto;
+  text-align: center;
+}
+
+nav img{
+  width: 20px;
+}
+
 body {
+  background-color: red;
   margin: 0px;
 }
 .post-container {
@@ -19,8 +31,7 @@ body {
 }
 
 .post-container .post {
-  padding: 10px 20px 20px 50px
-
+  padding: 10px 20px 20px 50px;
 }
 
 h1 {
