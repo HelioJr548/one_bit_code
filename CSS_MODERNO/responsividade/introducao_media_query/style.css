@@ -1,0 +1,36 @@
+/* Sem Responsividade, imagens e textos estaticos */
+.img-content {
+  width: 765px;
+  height: 400px;
+}
+
+.text-content {
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Responsividade, porém imagens e textos atualizam de forma drastica*/
+@media (max-width: 795px) {
+  .img-content {
+    width: 500px;
+    /* height: auto; */
+  }
+
+  .text-content {
+    font-size: 16px;
+  }
+}
+
+/* Responsividade, imagens e texto adaptam-se de forma mais fluida a dimensao da tela */
+@media (max-width: 510px) {
+  .img-content {
+    width: 100%;    
+    height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .text-content {
+    text-align: center;
+  }
+}
