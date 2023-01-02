@@ -22,6 +22,7 @@
   min-height: 40px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px;
   gap: 8px 15px;
@@ -33,7 +34,8 @@
 }
 
 .navBtn {
-  font-size: 16px;
+  font-size: 20px;
+  color: gainsboro;
   padding: 6px;
   background-color: transparent;
   border: 2px solid transparent;
@@ -42,7 +44,7 @@
 }
 
 .navBtn:hover {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid gainsboro;
 }
 
 .sectionTitle {
@@ -55,6 +57,7 @@
 .sectionDescription {
   text-align: center;
   color: #383838;
+  padding: 0 5px ;
 }
 
 .gridContainer {
@@ -151,7 +154,7 @@
 }
 
 .logoFooter {
-  width: 180px;
+  width: 90px;
 }
 
 .footerAnchor {
@@ -179,9 +182,7 @@
 }
 
 @media (max-width: 463px) {
-  .header {
-    justify-content: center;
-  }
+  .header,
   .footer {
     justify-content: center;
   }
