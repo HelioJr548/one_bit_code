@@ -12,10 +12,6 @@
   flex-direction: column;
 }
 
-.logoNavBar {
-  width: 180px;
-}
-
 .header {
   background-color: #292929;
   width: 100%;
@@ -27,6 +23,11 @@
   padding: 30px;
   gap: 8px 15px;
 }
+
+.logoNavBar {
+  width: 180px;
+}
+
 
 .headerBtnGroup {
   display: flex;
