@@ -3,6 +3,7 @@ let saldoInicial = parseFloat(
 );
 
 let saldoFinal = saldoInicial;
+let saldo = parseFloat();
 let valorAdd = 0;
 let valorGasto = 0;
 let opt;
@@ -18,23 +19,25 @@ do {
 
   switch (opt) {
     case `1`:
-      valorAdd += parseFloat(
+      saldo = parseFloat(
         prompt(`Informe o valor a ser depositado:\nExemplo 25.00`)
       );
-      if (isNaN(valorAdd)) {
+      if (isNaN(saldo)) {
         alert(`Valor informado invalido, tente novamente.`);
       } else {
-        saldoFinal += valorAdd;
+        saldoFinal += saldo;
+        valorAdd += saldo
       }
       break;
     case `2`:
-      valorGasto += parseFloat(
+      saldo = parseFloat(
         prompt(`Informe o valor a ser sacado:\nExemplo 25.00`)
       );
-      if (isNaN(valorGasto)) {
+      if (isNaN(saldo)) {
         alert(`Valor informado invalido, tente novamente.`);
       } else {
-        saldoFinal -= valorGasto;
+        saldoFinal -= saldo;
+        valorGasto += saldo;
       }
       break;
     default:
