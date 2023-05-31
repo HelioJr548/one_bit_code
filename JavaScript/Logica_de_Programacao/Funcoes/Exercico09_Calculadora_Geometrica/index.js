@@ -1,92 +1,111 @@
-function areaRetangular(base, altura) {
-  return base * altura;
+const pi = Math.PI;
+
+// Função auxiliar para obter um número válido do usuário
+function obterNumeroValido(mensagem) {
+  let valor;
+  do {
+    valor = parseFloat(prompt(mensagem));
+  } while (isNaN(valor));
+  return valor;
 }
 
-function areaQuadrada(lado) {
-  return areaRetangular(lado, lado);
+// Funções de cálculo da área das figuras
+
+function calcularAreaRetangulo() {
+  // Solicita a base e a altura do retângulo
+  const base = obterNumeroValido("Informe a base do retângulo:");
+  const altura = obterNumeroValido("Informe a altura do retângulo:");
+
+  // Calcula e retorna a área do retângulo
+  return (base * altura).toFixed(2);
 }
 
-function areaTriangular(base, altura) {
-  return areaRetangular(base, altura) / 2;
+function calcularAreaQuadrado() {
+  // Solicita o lado do quadrado
+  const lado = obterNumeroValido("Informe o lado do quadrado:");
+
+  // Calcula e retorna a área do quadrado
+  return (lado * lado).toFixed(2);
 }
 
-function areaTrapezio(baseMaior, baseMenor, altura) {
-  return ((baseMaior + baseMenor) * altura) / 2;
+function calcularAreaTriangulo() {
+  // Solicita a base e a altura do triângulo
+  const base = obterNumeroValido("Informe a base do triângulo:");
+  const altura = obterNumeroValido("Informe a altura do triângulo:");
+
+  // Calcula e retorna a área do triângulo
+  return (base * altura / 2).toFixed(2);
 }
 
-function areaCircular(raio) {
-  return 3.14 * areaQuadrada(raio);
+function calcularAreaTrapezio() {
+  // Solicita a base menor, a base maior e a altura do trapézio
+  const baseMenor = obterNumeroValido("Informe a base menor do trapézio:");
+  const baseMaior = obterNumeroValido("Informe a base maior do trapézio:");
+  const altura = obterNumeroValido("Informe a altura do trapézio:");
+
+  // Calcula e retorna a área do trapézio
+  return ((baseMaior + baseMenor) * altura / 2).toFixed(2);
 }
 
-function exibirMenu() {
-  return parseInt(
-    prompt(
-      `Escolha qual deseja calcular:
-            
-[1] Área do Triângulo: base * altura / 2
-[2] Área do Retângulo: base * altura
-[3] Área do Quadrado: lado²
-[4] Área do Trapézio: (base maior + base menor) * altura / 2
-[5] Área do Círculo: pi * raio² (considere pi = 3.14)
-            
-[0] SAIR`
-    )
-  );
+function calcularAreaCirculo() {
+  // Solicita o raio do círculo
+  const raio = obterNumeroValido("Informe o raio do círculo:");
+
+  // Calcula e retorna a área do círculo
+  return (pi * raio * raio).toFixed(2);
+}
+
+function exibirOpcoesMenu() {
+  const menu =
+    "Calculadora Geométrica\n" +
+    "[1] Calcular área de triângulo\n" +  // base * altura / 2
+    "[2] Calcular área de retângulo\n" +  // base * altura
+    "[3] Calcular área de quadrado\n" +   // lado²
+    "[4] Calcular área de trapézio\n" +   // (base maior + base menor) * altura / 2
+    "[5] Calcular área de círculo\n" +    // pi * raio² (considere pi = 3.14159)
+    "[0] Sair\n";
+
+  // Retorna a exibição das opções do menu e aguarda a entrada do usuário usando o prompt
+  return prompt(menu);
 }
 
 function executar() {
   let opcao;
 
   do {
-    opcao = exibirMenu();
+    opcao = exibirOpcoesMenu();
+    let resultado;
 
     switch (opcao) {
-      case 1:
-        alert(
-          `Área do Triângulo: ${areaTriangular(
-            parseFloat(prompt("Qual o tamanho da base do triangulo?")),
-            parseFloat(prompt("Qual a altura do triangulo?"))
-          )}`
-        );
+      case "1":
+        resultado = calcularAreaTriangulo();
+        alert(`Área do Triângulo: ${resultado}`);
         break;
-      case 2:
-        alert(
-          `Área do Retângulo: ${areaRetangular(
-            parseFloat(prompt("Qual o tamanho da base do retângulo?")),
-            parseFloat(prompt("Qual a altura do retângulo?"))
-          )}`
-        );
+      case "2":
+        resultado = calcularAreaRetangulo();
+        alert(`Área do Retângulo: ${resultado}`);
         break;
-      case 3:
-        alert(
-          `Área do Quadrado: ${areaQuadrada(
-            parseFloat(prompt("Qual o tamanho do lado do quadrado?"))
-          )}`
-        );
+      case "3":
+        resultado = calcularAreaQuadrado();
+        alert(`Área do Quadrado: ${resultado}`);
         break;
-      case 4:
-        alert(
-          `Área do Trapézio: ${areaTrapezio(
-            parseFloat(prompt("Qual o tamanho da base maior do trapézio?")),
-            parseFloat(prompt("Qual o tamanho da base maior do trapézio?")),
-            parseFloat(prompt("Qual a altura do trapézio?"))
-          )}`
-        );
+      case "4":
+        resultado = calcularAreaTrapezio();
+        alert(`Área do Trapézio: ${resultado}`);
         break;
-      case 5:
-        alert(
-          `Área do Circulo: ${areaCircular(
-            parseFloat(prompt("Qual o raio do circulo?"))
-          )}`
-        );
+      case "5":
+        resultado = calcularAreaCirculo();
+        alert(`Área do Círculo: ${resultado}`);
         break;
-      case 0:
-        alert("Saindo...");
+      case "0":
+        alert(`Saindo`);
         break;
       default:
-        alert("Opção Inválida!");
+        alert(`Opção inválida!`);
+        break;
     }
-  } while (opcao !== 0);
+
+  } while (opcao !== "0");
 }
 
 executar();
