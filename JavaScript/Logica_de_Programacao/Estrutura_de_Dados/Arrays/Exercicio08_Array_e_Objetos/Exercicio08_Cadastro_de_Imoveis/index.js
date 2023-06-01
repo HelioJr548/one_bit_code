@@ -6,7 +6,8 @@ do {
 Imoveis cadastrados: ${imoveis.length}
 
 [1] Adicionar Imóvel
-[2] Sair`)
+[2] Exibir Imóveis cadastrados
+[3] Sair`)
   );
 
   switch (opt) {
