@@ -67,7 +67,7 @@ function inscreverCandidato() {
 }
 
 function excluirVaga() {
-    const indice = prompt("Informe o índice da vaga que deseja excluir:")
+    const indice = parseInt(prompt("Informe o índice da vaga que deseja excluir:"))
     const vaga = vagas[indice]
 
     const confirmacao = confirm(
@@ -117,6 +117,7 @@ function executar() {
                 break
             case "5":
                 excluirVaga()
+                break
             case "6":
                 alert("Saindo...")
                 break
