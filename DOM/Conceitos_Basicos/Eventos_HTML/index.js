@@ -2,8 +2,8 @@ function show() {
     const contactList = document.getElementById('contact-list')
     console.log(contactList)
 
-    const lisElements = document.getElementsByTagName("li")
-    console.log(lisElements)
+    const listElements = document.getElementsByTagName("li")
+    console.log(listElements)
 
     const contactIputs = document.getElementsByClassName("contact-input")
     console.log(contactIputs)
