@@ -9,15 +9,37 @@ function updateTitle() {
 }
 
 function initializeGame() {
+    const player1Input = document.getElementById('player1')
+    const player2Input = document.getElementById('player2')
+
+    if (player1Input.value === '') {
+        player1Input.classList.add('input-error')
+        setTimeout(function () {
+            player1Input.classList.remove('input-error')
+        }, 500);
+        return;
+    } else if (player2Input.value === '') {
+        player2Input.classList.add('input-error')
+        setTimeout(function () {
+            player2Input.classList.remove('input-error')
+        }, 500)
+        return
+    } else {
+        player1Input.classList.remove('input-error')
+        player2Input.classList.remove('input-error')
+    }
+
     // Inicializa as variáveis globais 
     vBoard = [['', '', ''], ['', '', ''], ['', '', '']]
     turnPlayer = 'player1'
     // Ajusta o título da página (caso seja necessário)
     document.querySelector('h2').innerHTML = 'Vez de: <span id="turnPlayer"></span>'
+    document.querySelector('#start').innerText = 'Recomeçar!'
     updateTitle()
+
     // Limpa o tabuleiro (caso seja necessário) e adiciona os eventos de clique
     boardRegions.forEach(function (element) {
-        element.classList.remove('win')
+        element.className = ''
         element.innerText = ''
         element.classList.add('cursor-pointer')
         element.addEventListener('click', handleBoardClick)
@@ -58,7 +80,7 @@ function handleWin(regions) {
         document.querySelector('[data-region="' + region + '"]').classList.add('win')
     })
     const playerName = document.getElementById(turnPlayer).value
-    document.querySelector('h2').innerHTML = playerName + ' venceu!'
+    document.querySelector('h2').innerHTML = `${playerName} venceu!`
 }
 
 function handleBoardClick(ev) {
@@ -72,9 +94,12 @@ function handleBoardClick(ev) {
     if (turnPlayer === 'player1') {
         span.innerText = 'X'
         vBoard[row][column] = 'X'
+        span.classList.add('x')
     } else {
         span.innerText = 'O'
         vBoard[row][column] = 'O'
+        span.classList.add('o')
+
     }
     // Limpa o console e exibe nosso tabuleiro virtual
     console.clear()
